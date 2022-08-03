@@ -1,23 +1,19 @@
 import { useEffect, useState } from "react"
 import { CardContainer } from "./style"
 
-export function Card({data}){
-    
-    useEffect(() => {
-        console.log(data)
-    }, [])
+export function Card({data, setCountry}){
 
     return(
 
-        <CardContainer>
+        <CardContainer onClick={() => {setCountry(data)}}>
 
             <div>
-                <img src={data.flags.png} alt={data.name.common} />
+                <img src={data.flags.png} alt={data.name} />
             </div>
 
             <div>
 
-                <h2> {data.name.common} </h2>
+                <h2> {data.name} </h2>
 
                 <ul>
                     <li><span>Population</span>: {data.population} </li>

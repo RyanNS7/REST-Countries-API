@@ -1,52 +1,29 @@
-import { useEffect, useState } from "react"
-import axios from 'axios'
-import { Header } from './components/Header'
-import { Card } from './components/Card'
+import { useState } from 'react'
+import { HomePage } from './pages/HomePage'
+import { CountryDetails } from './pages/CountryDetails'
 import { GlobalStyles } from './styles/GlobalStyles'
-import { SearchOrFilter } from "./components/SearchOrFilter"
-
-/*
-
-//// pegar por região ////
-
----------- https://restcountries.com/v3.1/region/{region} ----------
-
-
-//// todos os paises ////
-
----------- https://restcountries.com/v3.1/all ----------
-
-*/
-
 
 function App() {
 
-  const [data, setData] = useState([])
+  const [country, setCountry] = useState([])
 
-  useEffect(() => {
-    axios.get("https://restcountries.com/v3.1/region/Americas").then(response => {
-      setData(response.data)
-    })
+  if(country.length === 0){
+    return(
+      <>
+        <GlobalStyles />
+        <HomePage setCountry={setCountry} />      
+      </>
 
-    console.log(data)
-  }, [])
-
-  return (
-  <>
-    <GlobalStyles />
-
-    <Header />
-
-    <SearchOrFilter />
-
-    <div className="some-countries">
-      {data.map((country, key) => {
-        return <Card data={country} key={key} />
-      })}
-    </div>
-    
-  </>
-  )
+    )
+  }else{
+    return(
+    <>
+      <GlobalStyles />
+      <CountryDetails country={country} setCountry={setCountry}/>
+    </>
+    )
+  }
+  
 }
 
 export default App

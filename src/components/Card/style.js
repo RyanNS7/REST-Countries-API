@@ -10,9 +10,12 @@ export const CardContainer = styled.div`
 
     div{
         width: 100%;
+        height: 50%;
+        border-bottom: 1px solid black;
 
         img{
             width: 100%;
+            height: 100%;
         }
 
     }
@@ -21,6 +24,7 @@ export const CardContainer = styled.div`
         padding: 2rem;
         text-decoration: none;
         font-size: 16px;
+        border: none;
 
         h2{
             margin-bottom: 1rem;

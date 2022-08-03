@@ -18,5 +18,25 @@ body{
         justify-content: space-between;
         padding: 2rem;
     }
+
+    .back-homepage{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2rem;
+        width: 7rem;
+        padding: 0.6rem;
+        border: transparent;
+        background: transparent;
+        box-shadow: 0 0 5px #a4a4a4;
+        margin-top: 3.5rem;
+        cursor: pointer;
+
+        .arrow{
+            margin-right: 8px;
+        }
+
+    }
 }
 `

@@ -1,14 +1,23 @@
 import { FilterCountry, FormContainer, SearchCountry } from './style'
 import { FaSearch } from 'react-icons/fa'
+import { useState } from 'react'
 
-export function SearchOrFilter(){
+export function SearchOrFilter(props){
 
-    function asd(e){
+    const [searchCountry, setSearchCountry] = useState('')
+
+    function submitData(e){
         e.preventDefault()
+
+        props.submitNameCountry(searchCountry)
     }
 
-    function test(e){
-        console.log(e.target.value)
+    function nameCountry(e){
+        setSearchCountry(e.target.value)
+    }
+
+    function filterRegion(e){
+        props.catchDataFiltered(e.target.value)
     }
 
     return (
@@ -18,8 +27,8 @@ export function SearchOrFilter(){
                 
                 <form>
 
-                    <button onClick={asd}> <FaSearch /> </button>
-                    <input type='text' placeholder='Search for a country...' />
+                    <button onClick={submitData}> <FaSearch /> </button>
+                    <input type='text' placeholder='Search for a country...' value={searchCountry} onChange={nameCountry}/>
 
                 </form>
 
@@ -27,10 +36,10 @@ export function SearchOrFilter(){
 
             <FilterCountry>
 
-                <select name='regions' id='regions' onChange={test}>
+                <select name='regions' id='regions' onChange={filterRegion}>
                     <option selected hidden> Filter by Region </option>
                     <option value='africa'> Africa </option>
-                    <option value='america'> America </option>
+                    <option value='americas'> America </option>
                     <option value='asia'> Asia </option>
                     <option value='europe'> Europe </option>
                     <option value='oceania'> Oceania </option>
