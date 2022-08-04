@@ -6,11 +6,12 @@ import { GlobalStyles } from './styles/GlobalStyles'
 function App() {
 
   const [country, setCountry] = useState([])
+  const [darkMode, setDarkMode] = useState(false)
 
   if(country.length === 0){
     return(
       <>
-        <GlobalStyles />
+        <GlobalStyles darkMode={darkMode}/>
         <HomePage setCountry={setCountry} />      
       </>
 

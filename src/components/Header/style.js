@@ -33,4 +33,26 @@ export const HeaderContainer = styled.div`
 
     }
 
+    @media screen and (max-width: 48em){
+        div:nth-child(1){
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (max-width: 23.4375em){
+        div:nth-child(1){
+            margin-left: 0;
+            font-size: 12px;
+        }
+
+        div:nth-child(2){
+            margin-right: 0;
+
+            button{
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+
 `

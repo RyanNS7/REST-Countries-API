@@ -9,6 +9,10 @@ export const FormContainer = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    @media screen and (max-width: 23.4375em){
+        display: block;
+        padding: 1rem;
+    }
 
 `
 
@@ -36,6 +40,7 @@ export const SearchCountry = styled.div`
             width: 20%;
             border-radius: 0.5rem 0 0 0.5rem;
             border-color: transparent;
+            background-color: white;
             cursor: pointer;
         }
         
@@ -52,6 +57,18 @@ export const SearchCountry = styled.div`
             outline: 0;
         } 
 
+    }
+
+    @media screen and (max-width: 48em){
+        width: 40%;
+    }
+
+    @media screen and (max-width: 23.4375em){
+        width: 100%;
+
+        form{
+            margin-bottom: 1rem;
+        }
     }
 
 `
@@ -84,5 +101,13 @@ export const FilterCountry = styled.div`
         outline: 0;
     } 
 
+    @media screen and (max-width: 48em){
+        width: 50%;
+    }
+
+    @media screen and (max-width: 23.4375em){
+        width: 70%;
+        margin: 2rem 0;
+    }
 
 `

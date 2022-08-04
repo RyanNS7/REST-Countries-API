@@ -13,10 +13,11 @@ body{
     background: hsl(0, 0%, 98%);
 
     .some-countries{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 2rem;
+        max-width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
     }
 
     .back-homepage{
@@ -36,7 +37,47 @@ body{
         .arrow{
             margin-right: 8px;
         }
+    }
 
+    @media screen and (max-width: 88.75em){
+        .some-countries{
+            max-width: 98%;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 64em) {
+        .some-countries{
+            display: grid;
+            margin: auto;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            max-width: 98%;
+        }
+    }
+
+    @media screen and (max-width: 48em) {
+        .some-countries{
+            display: grid;
+            margin: auto;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            max-width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 31.25em){
+
+        .some-countries{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .back-homepage{
+            margin: 2rem;
+        }
     }
 }
 `

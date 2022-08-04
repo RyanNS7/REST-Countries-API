@@ -42,8 +42,8 @@ export function CountryDetailsExtended({ dataCountry, setCountry}){
                     </div>
                 </div>
 
-                <div>
-                 {dataCountry.borders !== undefined && <span >Border Countries: 
+                <div className="div-border-countries">
+                 {dataCountry.borders !== undefined && <span><span>Border Countries:</span> 
                         {dataCountry.borders.slice(0, 3).map((border) => {
                             return <button className="border-countries" onClick={() => {
                                 axios.get(`https://restcountries.com/v2/alpha/${border}`).then(response => {
