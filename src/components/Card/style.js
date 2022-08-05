@@ -5,7 +5,8 @@ export const CardContainer = styled.div`
     width: 20rem;
     cursor: pointer;
     box-shadow: 0 0 5px #a4a4a4;
-    background-color: white;
+    background: ${props => !props.darkMode ? 'white' : '#202C37'};
+    color: ${props => !props.darkMode ? 'black' : 'white'};
 
     div{
         width: 100%;

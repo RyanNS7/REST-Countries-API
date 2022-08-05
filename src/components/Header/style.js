@@ -9,10 +9,14 @@ export const HeaderContainer = styled.div`
     padding: 1rem;
     box-shadow: 0 0 5px #a4a4a4;
     margin-bottom: 1rem;
-    background: white;
+    background: ${props => !props.darkMode ? 'white' : '#202C37'};
 
     div:nth-child(1){
         margin-left: 1rem;
+
+        h2{
+            color: ${props => !props.darkMode ? 'black' : 'white'};
+        }
     }
 
     div:nth-child(2){
@@ -29,6 +33,7 @@ export const HeaderContainer = styled.div`
 
             background: transparent;
             border-color: transparent;
+            color: ${props => !props.darkMode ? 'black' : 'white'};
         }
 
     }

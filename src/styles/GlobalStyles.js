@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body{
-    background: hsl(0, 0%, 98%);
+    background: ${props => !props.darkMode ? '#FAFAFA' : '#2A3844'};
 
     .some-countries{
         max-width: 90%;
@@ -29,8 +29,9 @@ body{
         width: 7rem;
         padding: 0.6rem;
         border: transparent;
-        background: transparent;
-        box-shadow: 0 0 5px #a4a4a4;
+        background: ${props => !props.darkMode ? 'transparent' : '#202C37'};
+        color: ${props => !props.darkMode ? 'black' : '#FAFAFA '};
+        box-shadow: 0 0 5px ${props => !props.darkMode ? '#a4a4a4' : 'black'};
         margin-top: 3.5rem;
         cursor: pointer;
 

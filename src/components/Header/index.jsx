@@ -1,16 +1,16 @@
 import { HeaderContainer } from "./style"
 import { BsMoon } from 'react-icons/bs'
 
-export function Header(){
+export function Header({darkMode, setDarkMode}){
     return (
-        <HeaderContainer>
+        <HeaderContainer darkMode={darkMode}>
 
             <div>
                 <h2> Where in the World? </h2>
             </div>
 
             <div>
-                <button> <BsMoon className="test"/> Dark Mode  </button>
+                <button onClick={() => {setDarkMode(!darkMode)}}> <BsMoon className="test"/> Dark Mode  </button>
             </div>
 
         </HeaderContainer>

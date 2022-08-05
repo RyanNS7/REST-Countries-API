@@ -28,10 +28,12 @@ export const SearchCountry = styled.div`
         width: 100%;
         height: 4rem;
         border-radius: 0.5rem;
-        box-shadow: 0 0 5px #a4a4a4;
+        box-shadow: 0 0 5px ${props => !props.darkMode ? '#a4a4a4' : 'black'};
 
         button,
         input{
+            background: ${props => !props.darkMode ? 'transparent' : '#202C37'};
+            color: ${props => !props.darkMode ? 'black' : 'white'};
             padding: 0.5rem;
             height: 100%;
         }
@@ -40,7 +42,7 @@ export const SearchCountry = styled.div`
             width: 20%;
             border-radius: 0.5rem 0 0 0.5rem;
             border-color: transparent;
-            background-color: white;
+            background: ${props => !props.darkMode ? 'transparent' : '#202C37'};
             cursor: pointer;
         }
         
@@ -75,7 +77,7 @@ export const SearchCountry = styled.div`
 
 export const FilterCountry = styled.div`
 
-    box-shadow: 0 0 1em #a4a4a4;
+    box-shadow: 0 0 1em ${props => !props.darkMode ? '#a4a4a4' : 'black'};
     border-radius: 0.5rem;
     width: 20%;
     height: 4rem;
@@ -87,8 +89,12 @@ export const FilterCountry = styled.div`
         border: transparent;
         padding: 1rem;
         font-size: 18px;
+        background: ${props => !props.darkMode ? 'transparent' : '#202C37'};
+        color: ${props => !props.darkMode ? 'black' : 'white'};
 
         option{
+            background: ${props => !props.darkMode ? 'transparent' : '#202C37'};
+            color: ${props => !props.darkMode ? 'black' : 'white'};
             padding: 15rem;
             font-size: 18px;
         }

@@ -12,15 +12,15 @@ function App() {
     return(
       <>
         <GlobalStyles darkMode={darkMode}/>
-        <HomePage setCountry={setCountry} />      
+        <HomePage setCountry={setCountry} darkMode={darkMode} setDarkMode={setDarkMode}/>      
       </>
 
     )
   }else{
     return(
     <>
-      <GlobalStyles />
-      <CountryDetails country={country} setCountry={setCountry}/>
+      <GlobalStyles darkMode={darkMode}/>
+      <CountryDetails country={country} setCountry={setCountry} darkMode={darkMode} setDarkMode={setDarkMode}/>
     </>
     )
   }
@@ -28,3 +28,16 @@ function App() {
 }
 
 export default App
+
+/* 
+FAFAFA - background l 
+
+202C37 - background very dark d
+
+white - color
+
+color dark - 2A3844
+
+
+
+*/

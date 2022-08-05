@@ -48,13 +48,13 @@ export function HomePage(props){
 
     return (
     <>
-        <Header />
+        <Header darkMode={props.darkMode} setDarkMode={props.setDarkMode}/>
 
-        <SearchOrFilter catchDataFiltered={catchDataFiltered} submitNameCountry={searchCountry}/>
+        <SearchOrFilter catchDataFiltered={catchDataFiltered} submitNameCountry={searchCountry} darkMode={props.darkMode}/>
 
         <div className="some-countries">
         {dataCountry.map((country, key) => {
-            return <Card data={country} key={key} setCountry={props.setCountry}/>
+            return <Card data={country} key={key} setCountry={props.setCountry} darkMode={props.darkMode}/>
         })}
         </div>
         

@@ -1,17 +1,17 @@
 import { Container, MoreInformations } from "./style"
 import axios from 'axios'
 
-export function CountryDetailsExtended({ dataCountry, setCountry}){
+export function CountryDetailsExtended({ dataCountry, setCountry, darkMode}){
 
     return(
         <>
-        <Container>
+        <Container darkMode={darkMode}>
 
             <div className="flag-country">
                 <img src={dataCountry.flags.svg} alt={dataCountry.name}/>
             </div>
 
-            <MoreInformations>
+            <MoreInformations darkMode={darkMode}>
                 <div>
                     <h1>
                         {dataCountry.name}
@@ -22,7 +22,7 @@ export function CountryDetailsExtended({ dataCountry, setCountry}){
                     <div>
                         <ul>
                             <li> <span>Native Name:</span> {dataCountry.nativeName} </li>
-                            <li> <span>Population:</span> {dataCountry.population} </li>
+                            <li> <span>Population:</span> {dataCountry.population.toLocaleString('en-US')} </li>
                             <li> <span>Region:</span> {dataCountry.region} </li>
                             <li> <span>Sub Region:</span> {dataCountry.subregion} </li>
                             <li> <span>Capital:</span> {dataCountry.capital} </li>

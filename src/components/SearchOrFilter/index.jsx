@@ -23,7 +23,7 @@ export function SearchOrFilter(props){
     return (
         <FormContainer>
 
-            <SearchCountry>
+            <SearchCountry darkMode={props.darkMode}>
                 
                 <form>
 
@@ -34,7 +34,7 @@ export function SearchOrFilter(props){
 
             </SearchCountry>
 
-            <FilterCountry>
+            <FilterCountry darkMode={props.darkMode}>
 
                 <select name='regions' id='regions' onChange={filterRegion}>
                     <option selected hidden> Filter by Region </option>

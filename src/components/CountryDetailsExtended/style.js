@@ -9,6 +9,7 @@ export const Container = styled.div`
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    color: ${props => !props.darkMode ? 'black' : 'white'};
 
     .flag-country{
         height: 25rem;
@@ -79,7 +80,8 @@ export const MoreInformations = styled.div`
         width: 5rem;
         padding: 0.6rem;
         border: transparent;
-        background: transparent;
+        background: ${props => !props.darkMode ? 'transparent' : '#202C37'};
+        color: ${props => !props.darkMode ? 'black' : 'white'};
         box-shadow: 0 0 5px #a4a4a4;
         margin-top: 3.5rem;
         cursor: pointer;
